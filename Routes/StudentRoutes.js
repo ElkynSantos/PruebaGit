@@ -1,8 +1,10 @@
-const { Router } = require("express")
-const StudentController = require("../Controllers/StudentControllers")
-const studentRouter = Router();
+const express = require("express");
+const studentRouter = express.Router();
 
-studentRouter.route("/CrearUsuario").post(StudentController)
+const {newStudent}= require("../Controllers/StudentControllers")
+
+
+studentRouter.route("/CrearUsuario").post(newStudent);
 
 
 module.exports = studentRouter
